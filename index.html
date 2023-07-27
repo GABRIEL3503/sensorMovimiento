@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="path/to/atropos.css" />
+    <title>Document</title>
+</head>
+
+<body style="background-color: rgb(0, 0, 0);">
+    <!-- main Atropos container (required), add your custom class here -->
+    <div class="atropos my-atropos">
+        <!-- scale container (required) -->
+        <div class="atropos-scale">
+            <!-- rotate container (required) -->
+            <div class="atropos-rotate">
+                <!-- inner container (required) -->
+                <div class="atropos-inner">
+                    <!-- put your custom content here -->
+                    <img style="width: 80vw; height: 100vh;" src="dall-e-api-now-available-in-public-beta.avif" alt="Description of the image">
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <script type="module">
+        import Atropos from 'https://cdn.jsdelivr.net/npm/atropos@2/atropos.min.mjs';
+
+        const myAtropos = Atropos({
+    el: '.my-atropos',
+    activeOffset: 80, // Hacer más grande el área activa alrededor del centro
+    shadowOffset: 20, // Aumentar el desplazamiento de la sombra para un efecto más profundo
+    shadowScale: 1.5, // Aumentar la escala de la sombra para un efecto más dramático
+    duration: 100, // Aumentar la duración de la animación para un movimiento más suave
+    rotateTouch: true, // Mantener la rotación al tocar
+    scaleTouch: false, // Deshabilitar la escala al tocar para una experiencia más consistente
+    shadow: true, // Mantener la sombra habilitada
+    shine: true, // Habilitar el brillo para un efecto más futurista
+    highlight: true, // Habilitar la iluminación para un efecto más realista
+});
+
+    </script>
+
+</body>
+
+</html>
