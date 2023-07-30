@@ -9,31 +9,32 @@
             margin: 0;
             padding: 0;
             overflow: hidden;
-            background-color: black;
-            position: relative;
+            background: url('tuvideo.mp4') no-repeat center center fixed; 
+            background-size: cover;
         }
 
-        video {
-            position: absolute;
+        #video-bg {
+            position: fixed;
             top: 0;
             left: 0;
             min-width: 100%;
             min-height: 100%;
             width: auto;
             height: auto;
+            z-index: -100;
             object-fit: cover;
             transform: translateZ(-200px) scale(2);
         }
     </style>
 </head>
 <body>
-    <video autoplay loop muted>
+    <video id="video-bg" autoplay loop muted>
         <source src="Gen-2 an astronaut trippin, 1604453341.mp4" type="video/mp4">
         Tu navegador no soporta la etiqueta de video.
     </video>
 
     <script>
-        var video = document.querySelector('video');
+        var videoBg = document.querySelector('#video-bg');
 
         if (window.DeviceOrientationEvent) {
             window.addEventListener('deviceorientation', function(event) {
@@ -49,7 +50,7 @@
                 var percY = (y + 30) / 60;
 
                 // Aplicar la transformación
-                video.style.transform = 'translateZ(-200px) scale(2) translateX(' 
+                videoBg.style.transform = 'translateZ(-200px) scale(2) translateX(' 
                                         + (percX - 0.5) * 100 + '%) translateY(' 
                                         + (percY - 0.5) * 100 + '%)';
             });
